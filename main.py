@@ -1,13 +1,17 @@
+from analysis import analysis
+
 from fastapi import FastAPI
 
 app = FastAPI()
 
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+@app.post("/refresh")
+async def refresh():
+    users = []  # TODO from MongoDB
 
+    for user in users:
+        user.song = analysis  # TODO update doc in MongoDB
 
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
+    # TODO send email/text notification
+
+    return {"message": "Songs of the Day generated!"}
