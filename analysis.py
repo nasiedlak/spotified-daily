@@ -1,4 +1,4 @@
-import spotipy
+from spotipy import Spotify
 from spotipy.oauth2 import SpotifyClientCredentials
 
 from pymongo import MongoClient
@@ -15,4 +15,6 @@ def analysis(username: str, password: str) -> str:
     str: uri of the song
 
     """
+    spotify = Spotify(client_credentials_manager=SpotifyClientCredentials())
+
     pass
