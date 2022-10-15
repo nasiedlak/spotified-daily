@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import MusicPlayer from "../components/MusicPlayer";
 
 const Home: NextPage = () => {
   return (
@@ -18,8 +19,10 @@ const Home: NextPage = () => {
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
+          <MusicPlayer
+              uri="79dL7FLiJFOO0EoehUHQBv"
+              dark={true}
+          />
         </p>
 
         <div className={styles.grid}>
