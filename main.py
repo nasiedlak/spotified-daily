@@ -23,7 +23,7 @@ async def refresh():
     users = []  # TODO from MongoDB
 
     for user in users:
-        user.song = analysis  # TODO update doc in MongoDB
+        user["song"] = analysis(user["username"], user["password"])  # TODO update doc in MongoDB
 
     # TODO send email/text notification
 
