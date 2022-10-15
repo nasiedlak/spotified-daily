@@ -1,3 +1,5 @@
+from dataclasses import dataclass
+
 from analysis import analysis
 
 from fastapi import FastAPI
@@ -5,6 +7,7 @@ from fastapi import FastAPI
 app = FastAPI()
 
 
+@dataclass
 class User:
     username: str
     password: str
@@ -14,7 +17,7 @@ class User:
     disliked: list
 
 
-@app.post("/register/")
+@app.post("/register")
 async def register(user: User):
     # TODO create doc in MongoDB
     # TODO send confirmation email
