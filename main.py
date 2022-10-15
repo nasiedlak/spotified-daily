@@ -20,7 +20,13 @@ async def register(user: User):
 
 @app.post("/refresh")
 async def refresh():
-    users = []  # TODO from MongoDB
+    users: list[{
+        "username": str,
+        "password": str,
+        "song": str,
+        "liked": list,
+        "disliked": list
+    }] = []  # TODO from MongoDB
 
     for user in users:
         user["song"] = analysis(user["username"], user["password"])  # TODO update doc in MongoDB
