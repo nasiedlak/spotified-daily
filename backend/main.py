@@ -8,7 +8,7 @@ app = FastAPI()
 
 
 @dataclass
-class User:
+class User:  # TODO remove temporary class to represent MongoDB doc
     username: str
     password: str
     email: str
@@ -18,14 +18,14 @@ class User:
 
 
 @app.post("/register")
-async def register(user: User):
+async def register(user: { "username": str, "password": str, "email": str }) -> { "message": str }:
     # TODO create doc in MongoDB
     # TODO send confirmation email
     return {"message": "Confirmation email sent!"}
 
 
 @app.post("/refresh")
-async def refresh():
+async def refresh() -> { "message": str }:
     users: list[User] = []  # TODO from MongoDB
 
     for user in users:
