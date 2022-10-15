@@ -23,6 +23,7 @@ async def refresh():
     users: list[{
         "username": str,
         "password": str,
+        "email": str,
         "song": str,
         "liked": list,
         "disliked": list
@@ -30,7 +31,6 @@ async def refresh():
 
     for user in users:
         user["song"] = analysis(user["username"], user["password"])  # TODO update doc in MongoDB
-
-    # TODO send email/text notification
+        # TODO send email/text notification
 
     return {"message": "Songs of the Day generated!"}
