@@ -9,6 +9,9 @@ class User:
     username: str
     password: str
     email: str
+    song: str
+    liked: list
+    disliked: list
 
 
 @app.post("/register/")
@@ -20,14 +23,7 @@ async def register(user: User):
 
 @app.post("/refresh")
 async def refresh():
-    users: list[{
-        "username": str,
-        "password": str,
-        "email": str,
-        "song": str,
-        "liked": list,
-        "disliked": list
-    }] = []  # TODO from MongoDB
+    users: list[User] = []  # TODO from MongoDB
 
     for user in users:
         user["song"] = analysis(user["username"], user["password"])  # TODO update doc in MongoDB
