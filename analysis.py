@@ -17,4 +17,8 @@ def analysis(username: str, password: str) -> str:
     """
     spotify = Spotify(client_credentials_manager=SpotifyClientCredentials())
 
-    pass
+    # TODO run some analysis on listening history and playlists
+
+    uri = ""  # TODO combine analysis with user preferences from MongoDB and other factors to recommend a song
+
+    return uri
