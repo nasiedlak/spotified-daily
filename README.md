@@ -1,7 +1,5 @@
-# Theme Song
+# Spotified Daily
 
-## TODO
-* Get user song data from Spotify API
-* Generate recommendations with custom algorithms and machine learning based on user profile in MongoDB
-* Allow for signups and viewing songs on Next.JS-based frontend
-* API to send notifications to user
+## Description
+
+A Next.js, React.js, and FastAPI web application that allows users to login with their Spotify accounts and gives them daily song recommendations based on previous activity. 
